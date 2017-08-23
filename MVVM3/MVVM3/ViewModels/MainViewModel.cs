@@ -11,11 +11,27 @@ namespace MVVM3.ViewModels
     {
         //sera para que pueda observar cada cosa del menuItenViewModel
         public ObservableCollection<MenuItemViewModel> Menu{ get; set; }
+        public ObservableCollection<OrderViewModel> Orders{ get; set; }
 
         public MainViewModel()
         {
             Menu =new ObservableCollection<MenuItemViewModel>();
+            Orders = new ObservableCollection<OrderViewModel>();
             LoadMenu();
+            LoadFakeData();
+        }
+
+        private void LoadFakeData()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Orders.Add(new OrderViewModel{
+                    Title="",
+                    DeliveryDate=DateTime.Today,
+                    Description="Loren ipsum dolor sir t amet, consecctur adipp" +
+                    "elit asod , ser der con da li aliv sabar"
+                });
+            }
         }
 
         private void LoadMenu()
