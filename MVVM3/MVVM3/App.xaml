@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MVVM3.App">
+             x:Class="MVVM3.App"
+             xmlns:infra="clr-namespace:MVVM3.Infrastructure;assembly=MVVM3"
+             >
+    <!--sintaxis para llamar al instance locator manejador de rutas de navegacion se llama con infra-->
 	<Application.Resources>
 <!--Esto permite utilizar para colores recursos-->
 		<!-- Application resource dictionary -->
@@ -14,6 +17,10 @@
             
             <Color x:Key="MenuColor">#52656b</Color>
             <Color x:Key="MenuFontColor">#ffffff</Color>
+            
+            <!--Ahora para llamarle UNA VES DEFINIDO-->
+            <!--Locator  , ademas llamas a la clase instance locator-->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

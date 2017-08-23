@@ -4,14 +4,28 @@
              x:Class="MVVM3.Pages.MenuPage"
              Title="Menú"
              BackgroundColor="{StaticResource MenuColor}"
+             BindingContext="{Binding Main ,Source={StaticResource Locator}}"
              >
-    <Label
-        Text="MenuPage"
-        HorizontalOptions="Center"
-        TextColor="{StaticResource MenuFontColor}"
-        VerticalOptions="Center"
-        ></Label>
-    
-    
-
+    <!--Accesi ak diccionario de recursos-->
+    <ListView ItemsSource="{Binding Menu}" HasUnevenRows="True"><!--Itemsours propiedad que define el origen de datos del ListView-->
+        <!--HasuneRows las filas se ajustan automaticamente-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid><!--Lo armare con una gruilla-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition><!--para que el tamanio de los anchos de las columnas sean autimatiocs -->
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Icon}" WidthRequest="50" HeightRequest="50">
+                        </Image><!--Binding a propiedad Icon del menu-->
+                        <!--Grid colum para que baya las propiedades del menu-->
+                        <Label Grid.Column="1" VerticalOptions="Center"
+                           TextColor="{StaticResource MenuFontColor}" Text="{Binding Title}"
+                           ></Label><!--Otro binding con la propiedad Title que son una de las propiedades del menu-->
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

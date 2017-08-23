@@ -104,10 +104,6 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\ic_action_alarms.zip" />
-    <AndroidResource Include="Resources\ic_action_customers.zip" />
-    <AndroidResource Include="Resources\ic_action_orders.zip" />
-    <AndroidResource Include="Resources\ic_action_settings.zip" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
