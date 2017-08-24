@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using MVVM3.Pages;
+using MVVM3.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace MVVM3.ViewModels
 {
      public class MenuItemViewModel
     {
+        //lqa idea, la pagina no conoce los modelos ylos modelos no deben de conocer la paginas
+        private NavigationService navigationService;
 
         public string Icon { get; set; }
 
@@ -19,6 +22,17 @@ namespace MVVM3.ViewModels
         public string PageName { get; set; }
 
         public ICommand NavigateCommand { get { return new RelayCommand(Navegate); } }
+
+        public MenuItemViewModel()
+        {
+            navigationService =new  NavigationService();
+        }
+
+        private void Navegate()
+        {
+            navigationService.Navegate(PageName);
+        }
+
 
        /* private void Navegate()
         {

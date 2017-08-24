@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using MVVM3.Pages;
+using MVVM3.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,6 +13,10 @@ namespace MVVM3.ViewModels
 {
     public class MainViewModel
     {
+        #region Attributes
+        private NavigationService navigationService;
+        #endregion
+
         #region Properties
         //sera para que pueda observar cada cosa del menuItenViewModel
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
@@ -23,25 +28,22 @@ namespace MVVM3.ViewModels
         //GoToCommand , es el nombre del comando que esta en la pagina
         private void GoTo(string pageName)//aqui vemos para que pagina tenemos que navegar
         {
-            switch (pageName)
-            {
-                case "NewOrderPage":
-                    App.Navigator.PushAsync(new NewOrderPage());
-                    break;
-                default:
-                    break;
-            }
+            navigationService.Navegate(pageName);
         }
         #endregion
+        #region Constructor
         public MainViewModel()
         {
-            Menu =new ObservableCollection<MenuItemViewModel>();
+            Menu = new ObservableCollection<MenuItemViewModel>();
             Orders = new ObservableCollection<OrderViewModel>();
+            navigationService = new NavigationService();
             LoadMenu();
-            LoadFakeData();
+      //      LoadFakeData();
         }
+        #endregion
 
-        private void LoadFakeData()
+
+        /*private void LoadFakeData()
         {
             for (int i = 0; i < 10; i++)
             {
@@ -52,7 +54,7 @@ namespace MVVM3.ViewModels
                     "elit asod , ser der con da li aliv sabar"
                 });
             }
-        }
+        }*/
 
         private void LoadMenu()
         {

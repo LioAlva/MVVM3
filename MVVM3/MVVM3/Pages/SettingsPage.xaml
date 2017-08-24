@@ -5,5 +5,5 @@
 
 
     <Label Text="Settings Page "  HorizontalOptions="Center"
-           TextColor="AliceBlue" VerticalOptions="Center"></Label>
+            VerticalOptions="Center"></Label>
 </ContentPage>

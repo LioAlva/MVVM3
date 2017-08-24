@@ -4,5 +4,5 @@
              x:Class="MVVM3.Pages.AlarmsPage">
 
     <Label Text="AlarmsPage"
-           TextColor="AliceBlue" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+           HorizontalOptions="Center" VerticalOptions="Center"></Label>
 </ContentPage>

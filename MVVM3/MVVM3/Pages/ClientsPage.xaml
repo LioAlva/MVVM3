@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVM3.Pages.ClientsPage">
 
-    <Label Text="ClientsPage"
-           TextColor="AliceBlue" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+    <Label Text="Clients Page"
+           VerticalOptions="Center" HorizontalOptions="Center"></Label>
 </ContentPage>
