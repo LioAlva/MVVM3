@@ -13,6 +13,9 @@
             <DataTemplate>
                 <ViewCell>
                     <Grid><!--Lo armare con una gruilla-->
+                        <Grid.GestureRecognizers><!--en la cuadricula definimos , cuando tocamos en el menu el ejecuta un comando llamado navigate command, el comando no debe ir en el main vievmodel sino en e el emnuitemviewmodel-->
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}"></TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition><!--para que el tamanio de los anchos de las columnas sean autimatiocs -->

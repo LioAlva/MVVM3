@@ -1,26 +1,14 @@
-﻿using GalaSoft.MvvmLight.Command;
-using MVVM3.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
-namespace MVVM3.ViewModels
+namespace MVVM3.Services
 {
-     public class MenuItemViewModel
+    public class NavigationService
     {
-
-        public string Icon { get; set; }
-
-        public string Title { get; set; }
-
-        public string PageName { get; set; }
-
-        public ICommand NavigateCommand { get { return new RelayCommand(Navegate); } }
-
-       /* private void Navegate()
+        public void Navegate(string PageName)
         {
             //una regla es que el  enu item viev model no conosca al master , tampoco alas paginas 
             App.Master.IsPresented = false;
@@ -28,18 +16,18 @@ namespace MVVM3.ViewModels
             {
                 case "AlarmsPage":
                     App.Navigator.PushAsync(new AlarmsPage());
-                     break;
+                    break;
                 case "ClientsPage":
                     App.Navigator.PushAsync(new ClientsPage());
-                     break;
+                    break;
                 case "SettingsPage":
                     App.Navigator.PushAsync(new SettingsPage());
-                     break;
+                    break;
                 case "MainPage":
                     App.Navigator.PopToRootAsync()//en main page no vamos al mai page nos vamos ala raiz que es la pagina de pedidos
                     ; break;
-                default:break;
+                default: break;
             }
-        }*/
+        }
     }
 }

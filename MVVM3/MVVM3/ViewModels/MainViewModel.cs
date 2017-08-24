@@ -46,7 +46,7 @@ namespace MVVM3.ViewModels
             for (int i = 0; i < 10; i++)
             {
                 Orders.Add(new OrderViewModel{
-                    Title="",
+                    Title=string.Format("Prueba {0}",i),
                     DeliveryDate=DateTime.Today,
                     Description="Loren ipsum dolor sir t amet, consecctur adipp" +
                     "elit asod , ser der con da li aliv sabar"
