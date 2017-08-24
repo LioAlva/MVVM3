@@ -8,17 +8,10 @@
              >
     <ContentPage.ToolbarItems>
         <!--es una colleccion-->
-        <ToolbarItem Icon="ic_action_add.png"/>
+        <ToolbarItem Icon="ic_action_add.png"
+                     Command="{Binding GoToCommand}"
+                     CommandParameter="NewOrderPage"/>
     </ContentPage.ToolbarItems>
-
-
-    <Label
-        HorizontalOptions="Center"
-        TextColor="{StaticResource FontColor}"
-        Text="Hola Main mundo"
-        VerticalOptions="Center"
-        ></Label>
-
     <ListView ItemsSource="{Binding Orders}" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -46,5 +39,4 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    
 </ContentPage>

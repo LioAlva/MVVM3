@@ -1,18 +1,38 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using MVVM3.Pages;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MVVM3.ViewModels
 {
     public class MainViewModel
     {
+        #region Properties
         //sera para que pueda observar cada cosa del menuItenViewModel
-        public ObservableCollection<MenuItemViewModel> Menu{ get; set; }
-        public ObservableCollection<OrderViewModel> Orders{ get; set; }
+        public ObservableCollection<MenuItemViewModel> Menu { get; set; }
+        public ObservableCollection<OrderViewModel> Orders { get; set; }
+        #endregion
 
+        #region Commands
+        public ICommand GoToCommand { get { return new RelayCommand<string>(GoTo); } }//nomre interno de como quiero llamar al comando
+        //GoToCommand , es el nombre del comando que esta en la pagina
+        private void GoTo(string pageName)//aqui vemos para que pagina tenemos que navegar
+        {
+            switch (pageName)
+            {
+                case "NewOrderPage":
+                    App.Navigator.PushAsync(new NewOrderPage());
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
         public MainViewModel()
         {
             Menu =new ObservableCollection<MenuItemViewModel>();
