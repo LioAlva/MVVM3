@@ -24,6 +24,13 @@ namespace MVVM3.ViewModels
         #endregion
 
         #region Commands
+        public ICommand StartCommand { get {return new RelayCommand(Start) ; } }
+
+        private void Start()
+        {
+            navigationService.SetMainPage();
+        }
+
         public ICommand GoToCommand { get { return new RelayCommand<string>(GoTo); } }//nomre interno de como quiero llamar al comando
         //GoToCommand , es el nombre del comando que esta en la pagina
         private void GoTo(string pageName)//aqui vemos para que pagina tenemos que navegar

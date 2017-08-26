@@ -13,10 +13,10 @@
                     <Editor TextColor="{StaticResource FontColor}" ></Editor>
                     <Label TextColor="{StaticResource FontColor}" Text="Fecha de Entrega"></Label>
                     <DatePicker BackgroundColor="{StaticResource  MenuFontColor}"></DatePicker>
-                    
-                    <Button HeightRequest="50" BorderRadius="25"
-                            BackgroundColor="{StaticResource MainColor}"
-                            TextColor="{StaticResource MenuFontColor}" Text="Guardar"></Button>
+
+                    <Button Style="{StaticResource GeneralButton}" 
+                            Text="Guardar" 
+                            ></Button>
                 </StackLayout>
             </ScrollView>
 </ContentPage>

@@ -33,5 +33,10 @@ namespace MVVM3.Services
                 default: break;
             }
         }
+
+        internal void SetMainPage()
+        {
+            App.Current.MainPage = new MasterPage();
+        }
     }
 }

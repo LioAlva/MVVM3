@@ -21,6 +21,47 @@
             <!--Ahora para llamarle UNA VES DEFINIDO-->
             <!--Locator  , ademas llamas a la clase instance locator-->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+            
+            <!--Otra etiqueta de Phones esta etiqueta ahora se puede usar en los diferentes menus ,definimos el tamnio deletra por platafprma-->
+            <OnPlatform x:Key="GeneralButtonFont" x:TypeArguments="Font" iOS="12" Android="14" WinPhone="16"/>
+
+            <!--Aca definimos stylos globales para la aplicacion-->
+            <Style  x:Key="GeneralButton"  TargetType="Button">
+                <Setter Property="Font" Value="{StaticResource GeneralButtonFont}"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor1}"/>
+                <Setter Property="TextColor" Value="{StaticResource MenuFontColor}"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <!--DATA TEMPLATES solo ahi se le pone-->
+            <DataTemplate x:Key="OrderItemTemplates">
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icon.png" VerticalOptions="Start" 
+                               WidthRequest="50" HeightRequest="50"></Image>
+                        <StackLayout Grid.Column="1">
+                            <Label FontAttributes="Bold"
+                                   VerticalOptions="Center" TextColor="{StaticResource FontColor}"
+                                   Text="{Binding Title}"></Label>
+                            <Label FontAttributes="Bold"
+                                   VerticalOptions="Center" TextColor="{StaticResource FontColor}"
+                                   Text="{Binding Description}"></Label>
+                            <Label FontAttributes="Bold"
+                                   VerticalOptions="Center" TextColor="{StaticResource MainColor}"
+                                   Text="{Binding DeliveryDate,StringFormat='{0:yyyy/MM/dd}'}"></Label>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <!--tódo el tempate-->
+
+
         </ResourceDictionary>
 	</Application.Resources>
 </Application>
