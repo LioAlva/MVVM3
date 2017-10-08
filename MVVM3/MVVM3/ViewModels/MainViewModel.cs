@@ -1,12 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using MVVM3.Pages;
 using MVVM3.Services;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MVVM3.ViewModels
@@ -15,19 +9,40 @@ namespace MVVM3.ViewModels
     {
         #region Attributes
         private NavigationService navigationService;
+        private ApiService apiService;
         #endregion
 
         #region Properties
         //sera para que pueda observar cada cosa del menuItenViewModel
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
         public ObservableCollection<OrderViewModel> Orders { get; set; }
+        public OrderViewModel NewOder { get;private  set; }
         #endregion
 
         #region Commands
         public ICommand StartCommand { get {return new RelayCommand(Start) ; } }
 
-        private void Start()
+        private async void Start()
         {
+            var orders = await apiService.GetAllOrders();
+            Orders.Clear();
+
+            foreach (var order in orders)
+            {
+                Orders.Add(new OrderViewModel{
+                    Client=order.Client,
+                    CreationDate=order.CreationDate,
+                    DeliveryDate=order.DeliveryDate,
+                    DeliveryInformation=order.DeliveryInformation,
+                    Description=order.Description,
+                    Id=order.Id,
+                    IsDelivered=order.IsDelivered,
+                    Phone=order.Phone,
+                    Title=order.Title
+                });
+            }
+
+
             navigationService.SetMainPage();
         }
 
@@ -35,6 +50,12 @@ namespace MVVM3.ViewModels
         //GoToCommand , es el nombre del comando que esta en la pagina
         private void GoTo(string pageName)//aqui vemos para que pagina tenemos que navegar
         {
+            switch (pageName) {
+                case "NewOrderPage":
+                    NewOder= new OrderViewModel();
+                    ; break;
+                default:break;
+            }
             navigationService.Navegate(pageName);
         }
         #endregion
@@ -44,6 +65,7 @@ namespace MVVM3.ViewModels
             Menu = new ObservableCollection<MenuItemViewModel>();
             Orders = new ObservableCollection<OrderViewModel>();
             navigationService = new NavigationService();
+            apiService = new ApiService();
             LoadMenu();
       //      LoadFakeData();
         }
@@ -91,8 +113,6 @@ namespace MVVM3.ViewModels
                 PageName = "SettingsPage",
                 Title = "Ajustes"
             });
-
-
         }
     }
 }

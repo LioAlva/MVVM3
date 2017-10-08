@@ -1,16 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using MVVM3.Pages;
 using MVVM3.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MVVM3.ViewModels
 {
-     public class MenuItemViewModel
+    public class MenuItemViewModel
     {
         //lqa idea, la pagina no conoce los modelos ylos modelos no deben de conocer la paginas
         private NavigationService navigationService;

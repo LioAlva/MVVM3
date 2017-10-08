@@ -16,7 +16,7 @@
             <Color x:Key="BackgroundColor">#f9f9f9</Color>
             
             <Color x:Key="MenuColor">#52656b</Color>
-            <Color x:Key="MenuFontColor">#ffffff</Color>
+            <Color x:Key="MenuFontColor">#ffAbff</Color>
             
             <!--Ahora para llamarle UNA VES DEFINIDO-->
             <!--Locator  , ademas llamas a la clase instance locator-->
@@ -60,8 +60,6 @@
                 </ViewCell>
             </DataTemplate>
             <!--tódo el tempate-->
-
-
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

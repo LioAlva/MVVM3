@@ -1,0 +1,11 @@
+body{
+    padding-left:20px;
+}
+
+nav{
+    text-align:right;
+}
+
+.hover{
+    background-color:green;
+}
