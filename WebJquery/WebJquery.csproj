@@ -88,17 +88,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\css\bootstrap-responsive.css" />
+    <Content Include="Models\css\bootstrap-responsive.min.css" />
+    <Content Include="Models\css\bootstrap.css" />
+    <Content Include="Models\css\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
     <Content Include="Models\ajax.html" />
+    <Content Include="Models\Indice.html" />
     <Content Include="Models\js\ajax.js" />
+    <Content Include="Models\js\script1.js" />
+    <Content Include="Models\Partials\_inicio.html" />
     <Content Include="Models\styles.css" />
     <Content Include="Models\index.html" />
     <Content Include="Models\js\scripts.js" />
     <Content Include="Models\Server\list.php" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\js\jquery-1.10.2.js" />
     <Content Include="Models\js\jquery-1.10.2.min.js" />
+    <Content Include="Models\Partials\_acerca.html" />
     <Content Include="Models\_load.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Models\js\jquery.numeric.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +127,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
