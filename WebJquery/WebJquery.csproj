@@ -99,6 +99,7 @@
     <Content Include="Models\Indice.html" />
     <Content Include="Models\js\ajax.js" />
     <Content Include="Models\js\script1.js" />
+    <Content Include="Models\Partials\_contacto.html" />
     <Content Include="Models\Partials\_inicio.html" />
     <Content Include="Models\styles.css" />
     <Content Include="Models\index.html" />

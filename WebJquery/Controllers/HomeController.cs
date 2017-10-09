@@ -14,6 +14,39 @@ namespace WebJquery.Controllers
             return View();
         }
 
+        public JsonResult list()
+        {
+            var rows = new List<Producto>
+            {
+                new Producto{id="1",producto="Coca cola",Price=25.00m},
+                new Producto{id="2",producto="Coca loca",Price=29.00m},
+                new Producto{id="3",producto="Coca olaca",Price=28.00m},
+                new Producto{id="4",producto="Coca lolca",Price=21.00m},
+                new Producto{id="5",producto="Coca olalc",Price=20.00m},
+                new Producto{id="6",producto="Coca colla",Price=20.00m},
+                new Producto{id="7",producto="Coca locaa",Price=25.00m},
+                new Producto{id="8",producto="Coca loaac",Price=28.00m},
+                new Producto{id="9",producto="Coca calo",Price=28.00m},
+                new Producto{id="10",producto="Coca ocla",Price=30.00m}
+            };
+            var response = new Response
+            {
+                count = rows.Count,
+                success =false,
+                 rows= rows
+            };
+
+
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult contacto(m model)
+        {
+            var msn = string.Format("{0} {1} {2}",model.nombre,model.correo,model.mensaje);
+            return Json(msn, JsonRequestBehavior.AllowGet);
+        }
 
         public JsonResult time()
         {
@@ -100,4 +133,34 @@ namespace WebJquery.Controllers
             }
         }
     }
+}
+
+public class Response
+{
+    public bool success { get; set; }
+    public int count{ get; set; }
+    public object rows { get; set; }
+}
+
+public class m
+{
+    public string nombre { get; set; }
+    public string correo { get; set; }
+    public string mensaje { get; set; }
+}
+
+public class Stock
+{
+    public List<Producto> productos  { get; set; }
+    public Stock()
+    {
+        productos = new List<Producto>();
+    }
+}
+
+public  class Producto
+{
+    public string id { get; set; }
+    public string producto { get; set; }
+    public decimal Price { get; set; }
 }

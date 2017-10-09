@@ -1,0 +1,32 @@
+﻿<h2>Contacto</h2>
+
+<form action="/Home/contacto" id="formularioContacto" method="post" class="form-horizontal well">
+    <div class="control-group">
+        <label for="nombre" class="control-label">Nombre</label>
+        <div class="controls">
+            <input  type="text" class="span4" id="nombre" name="nombre"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="" class="control-label">Correo</label>
+        <div class="controls">
+            <input type="text" class="span4" id="correo" name="correo" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="mensaje" class="control-label">Mensaje</label>
+        <div class="controls">
+            <textarea type="text" rows="3" class="span4" id="m.mensaje" name="mensaje" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="mensaje" class="control-label">Mensaje</label>
+        <div class="controls">
+            <input type="submit"  class="btn btn-primary"  value="Enviar comentario" id="submitContacto" />
+        </div>
+    </div>
+</form>
+
+<div id="successContacto" class="alert alert-info alert-block" style="display:none;">
+
+</div>
